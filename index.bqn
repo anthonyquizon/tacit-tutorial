@@ -1,6 +1,6 @@
 c←•FLines "tacit.bqn"
 m←⊑¨1⊸↑¨c='#'
-b←∾∾⟜(@+10)¨1⊸↓¨⌾(m⊸/)c
+b←∾∾⟜(@+10)¨(' '⊸∾1⊸↓)¨⌾(m⊸/)c
 
 "index.html"•FChars "
 <!DOCTYPE html>

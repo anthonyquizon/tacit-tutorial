@@ -1,6 +1,7 @@
 #<h1> Tacit Tutorial by Example</h1>
-#<h2> Expanded Forms</h2>
+#<small>Prerequisite: <a href="https://mlochbaum.github.io/BQN/tutorial/">BQN tutorial</a>.</small>
 #<small>Some code is dimmed for clarity.</small>
+#<h2> Expanded Forms</h2>
 #<h3> Trains</h3>
 #<section>
 #<div hidden>
@@ -72,13 +73,13 @@ b←w (J    I    H     G  F    )⊸K x
 c← ((J w) I  ((H  w) G (F w))) K x
 d← ((⊢ w) -˜ ((+` w) × (¬ w))) ⊔ x
 #<span class="deemphasize">
-##   (⊢    -˜   +`    ×  ¬    )⊸⊔
-##    │    │    │        │      │
-##    │    │    +`       │      │
-##    │    │     └────×──¬      │
-##    │    -˜         │         │
-##    ⊢────┼──────────┘         │
-##         └───────────────────⊸⊔
+##  (⊢    -˜   +`    ×  ¬    )⊸⊔
+##   │    │    │        │      │
+##   │    │    +`       │      │
+##   │    │     └────×──¬      │
+##   │    -˜         │         │
+##   ⊢────┼──────────┘         │
+##        └───────────────────⊸⊔
 ##
 "Should all be the same" !∧´a⊸≡¨b‿c‿d
 #</span>
