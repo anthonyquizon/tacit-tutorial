@@ -2,24 +2,29 @@
 #<h2> Trains printed in explicit form</h2>
 #<small>Some code is dimmed for clarity.</small>
 #<section>
+#<div hidden>
+{
+#</div>
 #<pre><code><span class="deemphasize">
+w‿x←"𝕨𝕩"
 F‿G‿H‿I‿J‿K‿L← {𝕊f:{
    𝕊𝕩: ∾"("‿f‿" "‿𝕩‿")"
 ; 𝕨𝕊𝕩: ∾"("‿𝕨‿" "‿f‿" "‿𝕩‿")"
 }}¨'F'+↕7
 #</span>
-"𝕨" (G F) "𝕩"            #                               (G (𝕨 F 𝕩))
-"𝕨" (H G F) "𝕩"          #                       ((𝕨 H 𝕩) G (𝕨 F 𝕩))
-"𝕨" (I H G F) "𝕩"        #                    (I ((𝕨 H 𝕩) G (𝕨 F 𝕩)))
-"𝕨" (J I H G F) "𝕩"      #            ((𝕨 J 𝕩) I ((𝕨 H 𝕩) G (𝕨 F 𝕩)))
-"𝕨" (K J I H G F) "𝕩"    #         (K ((𝕨 J 𝕩) I ((𝕨 H 𝕩) G (𝕨 F 𝕩))))
-"𝕨" (L K J I H G F) "𝕩"  # ((𝕨 L 𝕩) K ((𝕨 J 𝕩) I ((𝕨 H 𝕩) G (𝕨 F 𝕩))))
+(w (G F) x)       ≡                    G (w F x)
+(w (H G F) x)     ≡            (w H x) G (w F x)
+(w (I H G F) x)   ≡         I ((w H x) G (w F x))
+(w (J I H G F) x) ≡ (w J x) I ((w H x) G (w F x))
 
-"𝕨" G⊸F "𝕩"              # ((G 𝕨) F 𝕩)
-"𝕨" G⟜F "𝕩"              # (G 𝕨 (F 𝕩))
-"𝕨" G○F "𝕩"              # ((F 𝕨) G (F 𝕩)))
-"𝕨" (I H G)⊸F "𝕩"        # (((I 𝕨) H (G 𝕨)) F 𝕩)
+(w G⊸F x) ≡ (G w) F x
+(w G⟜F x) ≡ w G (F x)
+(w G○F x) ≡ (F w) G (F x)
+(w (I H G)⊸F x) ≡ ((I w) H (G w)) F x
 #</code></pre>
+#<div hidden>
+}
+#</div>
 #</section>
 
 #<section>
@@ -55,21 +60,21 @@ F‿G‿H‿I‿J‿K‿L← {𝕊f:{
 {
 #</div>
 #<pre><code><span class="deemphasize">
-y←"hello, world, !" ⋄ a1←y=',' ⋄ F‿G‿H‿I‿J‿K←⟨¬,×,+`,-˜,⊣,⊔⟩
+x←"hello, world, !" ⋄ w←x=',' ⋄ F‿G‿H‿I‿J‿K←⟨¬,×,+`,-˜,⊣,⊔⟩
 #</span>
-a← a1  (⊢     -˜   +`     ×  ¬     )⊸⊔ y      
-b← a1  (J     I    H      G  F     )⊸K y      
-c←    ((J a1) I  ((H  a1) G (F a1))) K y
-d←    ((⊢ a1) -˜ ((+` a1) × (¬ a1))) ⊔ y
+a←w (⊢    -˜   +`    ×  ¬    )⊸⊔ x  
+b←w (J    I    H     G  F    )⊸K x      
+c← ((J w) I  ((H  w) G (F w))) K x
+d← ((⊢ w) -˜ ((+` w) × (¬ w))) ⊔ x
 #<span class="deemphasize">
-##      (⊢     -˜   +`     ×  ¬     )⊸⊔
-##       │     │    │         │       │
-##       │     │    +`        │       │
-##       │     │     └─────×──¬       │
-##       │     -˜          │          │
-##       ⊢──────┼──────────┘          │
-##              └────────────────────⊸⊔
-## 
+##   (⊢    -˜   +`    ×  ¬    )⊸⊔
+##    │    │    │        │      │
+##    │    │    +`       │      │
+##    │    │     └────×──¬      │
+##    │    -˜         │         │
+##    ⊢────┼──────────┘         │
+##         └───────────────────⊸⊔
+##
 "Should all be the same" !∨´a⊸≡¨b‿c‿d
 #</span>
 #</code></pre>
