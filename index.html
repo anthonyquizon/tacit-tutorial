@@ -7,28 +7,33 @@
   <meta charset='UTF-8'>
   <title></title>
 </head>
-<h1> Tacit tutorial by example</h1>
-<h2> Trains printed in explicit form</h2>
+<h1> Tacit Tutorial by Example</h1>
+<h2> Expanded Forms</h2>
 <small>Some code is dimmed for clarity.</small>
+<h3> Trains</h3>
 <section>
 <div hidden>
 {
-</div>
-<pre><code><span class="deemphasize">
-w‿x←"𝕨𝕩"
-F‿G‿H‿I‿J‿K‿L← {𝕊f:{
-   𝕊𝕩: ∾"("‿f‿" "‿𝕩‿")"
-; 𝕨𝕊𝕩: ∾"("‿𝕨‿" "‿f‿" "‿𝕩‿")"
-}}¨'F'+↕7
+</div><pre><code><span class="deemphasize">
+w‿x←"𝕨𝕩" ⋄ F‿G‿H‿I‿J‿K‿L← {𝕊f:{ 𝕊𝕩: ∾"("‿f‿" "‿𝕩‿")" ; 𝕨𝕊𝕩: ∾"("‿𝕨‿" "‿f‿" "‿𝕩‿")" }}¨'F'+↕7
 </span>
 (w (G F) x)       ≡                    G (w F x)
 (w (H G F) x)     ≡            (w H x) G (w F x)
 (w (I H G F) x)   ≡         I ((w H x) G (w F x))
 (w (J I H G F) x) ≡ (w J x) I ((w H x) G (w F x))
-
-(w G⊸F x) ≡ (G w) F x
-(w G⟜F x) ≡ w G (F x)
-(w G○F x) ≡ (F w) G (F x)
+</code></pre>
+<div hidden>
+}
+</div>
+<div hidden>
+{
+</div>
+<h3> Combinators</h3><pre><code><span class="deemphasize">
+w‿x←"𝕨𝕩" ⋄ F‿G‿H‿I‿J‿K‿L← {𝕊f:{ 𝕊𝕩: ∾"("‿f‿" "‿𝕩‿")" ; 𝕨𝕊𝕩: ∾"("‿𝕨‿" "‿f‿" "‿𝕩‿")" }}¨'F'+↕7
+</span>
+(w G⊸F x)       ≡ (G w) F x
+(w G⟜F x)       ≡ w G (F x)
+(w G○F x)       ≡ (F w) G (F x)
 (w (I H G)⊸F x) ≡ ((I w) H (G w)) F x
 </code></pre>
 <div hidden>
