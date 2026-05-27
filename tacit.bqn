@@ -19,7 +19,7 @@ F‿G‿H‿I‿J‿K‿L← {𝕊f:{
 •Out "𝕨" (I H G)⊸F "𝕩"        # (((I 𝕨) H (G 𝕨)) F 𝕩)
 #</code></pre>
 
-#<h2> Examples from BQNCrate </h2>
+#<h2> Examples from <a href="https://mlochbaum.github.io/bqncrate/" target="_blank">BQNCrate</a> </h2>
 #<p>  Split y at 1s in a1, not including cells of y at those locations<br/>
 #<code class="inline-code">a1 (⊢ -˜+`× ¬)⊸⊔ y</code>
 #</p>
