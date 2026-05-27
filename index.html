@@ -1,64 +1,6 @@
 
 <!DOCTYPE html>
 <html lang='en'>
-<style>
-@font-face {
-    font-family: 'BQN';
-    src: url('BQN386.woff2') format('truetype');
-}
-
-body {
-    font-family: 'BQN';
-    font-size: clamp(1rem, 1.5vw + 0.5rem, 1.5rem);
-    max-width: clamp(720px, 80vw, 1000px);
-    margin: 2rem auto;
-    padding: 0 1.5rem;
-    line-height: 1.6;
-    color: #222;
-    background: #fff;
-}
-
-h1{
-    border-bottom: 1px solid #eee;
-    margin: 0.3rem;
-}
-h2{
-    margin-bottom: 0.1rem;
-    padding-bottom: 0.1rem;
-}
-
-pre {
-    background: #f5f5f5;
-    padding: 1rem;
-    border-radius: 6px;
-    overflow-x: auto;
-    font-size: 0.9em;
-    /* prevent code blocks from breaking layout on mobile */
-    white-space: pre;
-    word-break: normal;
-}
-
-code {
-    background: #f0f0f0;
-    padding: 0.1em 0.3em;
-    border-radius: 3px;
-}
-
-pre code {
-    background: none;
-    padding: 0;
-}
-
-@media (max-width: 480px) {
-    body {
-        margin: 1rem auto;
-        padding: 0 1rem;
-    }
-
-    h1 { font-size: 1.6rem; }
-    h2 { font-size: 1.2rem; }
-}
-</style>
 <link rel='stylesheet' href='./style.css'>
 <head>
   <meta charset='UTF-8'>
@@ -72,7 +14,6 @@ Print←{𝕊f: {
 ; 𝕨𝕊𝕩: ∾"("‿𝕨‿" "‿f‿" "‿𝕩‿")"
 }}
 F‿G‿H‿I‿J‿K‿L←Print¨'F'+↕7
-a←b←c←d←e←@
 
 •Out "--"
 •Out "𝕨" (G F) "𝕩"            #                               (G (𝕨 F 𝕩))
@@ -89,20 +30,23 @@ a←b←c←d←e←@
 </code></pre>
 
 <h2> Examples from BQNCrate </h2>
-<small> x,y,z:any m,n:num i,j:int a,b:bool c,d:char f,g,h:fn 0:unit 1:list 2:tab</small>
-
 <p> Split y at 1s in a1, not including cells of y at those locations</p>
+<div hidden>
+{
+</div>
 <pre><code>
-F‿G‿H‿I‿J‿K↩⟨¬,×,+`,-˜,⊣,⊔⟩
+F‿G‿H‿I‿J‿K←⟨¬,×,+`,-˜,⊣,⊔⟩
 y←"hello, world, !" ⋄ a1←y=','
 
-a↩a1 (⊢ -˜+`× ¬)⊸⊔ y      
-b↩a1 (J I H G F)⊸K y      
-c↩(((J a1) I  ((H  a1) G (F a1))) K y)
-d↩(((⊢ a1) -˜ ((+` a1) × (¬ a1))) ⊔ y)
-!∨´a⊸≡¨b‿c‿d
+a←a1 (⊢ -˜+`× ¬)⊸⊔ y      
+b←a1 (J I H G F)⊸K y      
+c←(((J a1) I  ((H  a1) G (F a1))) K y)
+d←(((⊢ a1) -˜ ((+` a1) × (¬ a1))) ⊔ y)
+"Should all be the same" !∨´a⊸≡¨b‿c‿d
 </code></pre>
-
+<div hidden>
+}
+</div>
 
 <body>
 </html>

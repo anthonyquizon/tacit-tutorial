@@ -1,0 +1,1 @@
+find *.bqn | entr bqn index.bqn

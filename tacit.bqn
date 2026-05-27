@@ -6,7 +6,6 @@ Print←{𝕊f: {
 ; 𝕨𝕊𝕩: ∾"("‿𝕨‿" "‿f‿" "‿𝕩‿")"
 }}
 F‿G‿H‿I‿J‿K‿L←Print¨'F'+↕7
-a←b←c←d←e←@
 
 •Out "--"
 •Out "𝕨" (G F) "𝕩"            #                               (G (𝕨 F 𝕩))
@@ -23,17 +22,20 @@ a←b←c←d←e←@
 #</code></pre>
 
 #<h2> Examples from BQNCrate </h2>
-#<small> x,y,z:any m,n:num i,j:int a,b:bool c,d:char f,g,h:fn 0:unit 1:list 2:tab</small>
-
 #<p> Split y at 1s in a1, not including cells of y at those locations</p>
+#<div hidden>
+{
+#</div>
 #<pre><code>
-F‿G‿H‿I‿J‿K↩⟨¬,×,+`,-˜,⊣,⊔⟩
+F‿G‿H‿I‿J‿K←⟨¬,×,+`,-˜,⊣,⊔⟩
 y←"hello, world, !" ⋄ a1←y=','
 
-a↩a1 (⊢ -˜+`× ¬)⊸⊔ y      
-b↩a1 (J I H G F)⊸K y      
-c↩(((J a1) I  ((H  a1) G (F a1))) K y)
-d↩(((⊢ a1) -˜ ((+` a1) × (¬ a1))) ⊔ y)
-!∨´a⊸≡¨b‿c‿d
+a←a1 (⊢ -˜+`× ¬)⊸⊔ y      
+b←a1 (J I H G F)⊸K y      
+c←(((J a1) I  ((H  a1) G (F a1))) K y)
+d←(((⊢ a1) -˜ ((+` a1) × (¬ a1))) ⊔ y)
+"Should all be the same" !∨´a⊸≡¨b‿c‿d
 #</code></pre>
-
+#<div hidden>
+}
+#</div>
