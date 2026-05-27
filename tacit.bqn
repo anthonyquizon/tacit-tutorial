@@ -1,4 +1,4 @@
-#<h1> Tacit tutorial</h1>
+#<h1> Tacit tutorial by example</h1>
 #<h2> Trains printed in explicit form</h2>
 #<pre><code><span class="deemphasize">
 F‿G‿H‿I‿J‿K‿L← {𝕊f:{
