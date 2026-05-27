@@ -59,8 +59,8 @@ y←"hello, world, !" ⋄ a1←y=',' ⋄ F‿G‿H‿I‿J‿K←⟨¬,×,+`,-˜
 #</span>
 a← a1  (⊢     -˜   +`     ×  ¬     )⊸⊔ y      
 b← a1  (J     I    H      G  F     )⊸K y      
-c←   (((J a1) I  ((H  a1) G (F a1))) K y)
-d←   (((⊢ a1) -˜ ((+` a1) × (¬ a1))) ⊔ y)
+c←    ((J a1) I  ((H  a1) G (F a1))) K y
+d←    ((⊢ a1) -˜ ((+` a1) × (¬ a1))) ⊔ y
 #<span class="deemphasize">
 ##      (⊢     -˜   +`     ×  ¬     )⊸⊔
 ##       │     │    │         │       │
