@@ -8,14 +8,12 @@
 </head>
 <h1> Tacit tutorial</h1>
 <h2> Trains printed in explicit form</h2>
-<pre><code>
-Print←{𝕊f: {
+<pre><code><span class="deemphasize">
+F‿G‿H‿I‿J‿K‿L← {𝕊f:{
    𝕊𝕩: ∾"("‿f‿" "‿𝕩‿")"
 ; 𝕨𝕊𝕩: ∾"("‿𝕨‿" "‿f‿" "‿𝕩‿")"
-}}
-F‿G‿H‿I‿J‿K‿L←Print¨'F'+↕7
-
-•Out "--"
+}}¨'F'+↕7
+</span>
 •Out "𝕨" (G F) "𝕩"            #                               (G (𝕨 F 𝕩))
 •Out "𝕨" (H G F) "𝕩"          #                       ((𝕨 H 𝕩) G (𝕨 F 𝕩))
 •Out "𝕨" (I H G F) "𝕩"        #                    (I ((𝕨 H 𝕩) G (𝕨 F 𝕩)))
@@ -23,10 +21,10 @@ F‿G‿H‿I‿J‿K‿L←Print¨'F'+↕7
 •Out "𝕨" (K J I H G F) "𝕩"    #         (K ((𝕨 J 𝕩) I ((𝕨 H 𝕩) G (𝕨 F 𝕩))))
 •Out "𝕨" (L K J I H G F) "𝕩"  # ((𝕨 L 𝕩) K ((𝕨 J 𝕩) I ((𝕨 H 𝕩) G (𝕨 F 𝕩))))
 
-•Out "𝕨" G⊸F "𝕩" # ((G 𝕨) F 𝕩)
-•Out "𝕨" G⟜F "𝕩" # (G 𝕨 (F 𝕩))
-•Out "𝕨" G○F "𝕩" # ((F 𝕨) G (F 𝕩)))
-•Out "𝕨" (I H G)⊸F "𝕩" # (((I 𝕨) H (G 𝕨)) F 𝕩)
+•Out "𝕨" G⊸F "𝕩"              # ((G 𝕨) F 𝕩)
+•Out "𝕨" G⟜F "𝕩"              # (G 𝕨 (F 𝕩))
+•Out "𝕨" G○F "𝕩"              # ((F 𝕨) G (F 𝕩)))
+•Out "𝕨" (I H G)⊸F "𝕩"        # (((I 𝕨) H (G 𝕨)) F 𝕩)
 </code></pre>
 
 <h2> Examples from BQNCrate </h2>
@@ -36,15 +34,16 @@ F‿G‿H‿I‿J‿K‿L←Print¨'F'+↕7
 <div hidden>
 {
 </div>
-<pre><code>
-F‿G‿H‿I‿J‿K←⟨¬,×,+`,-˜,⊣,⊔⟩
-y←"hello, world, !" ⋄ a1←y=','
-
-a←a1 (⊢ -˜+`× ¬)⊸⊔ y      
-b←a1 (J I H G F)⊸K y      
-c←(((J a1) I  ((H  a1) G (F a1))) K y)
-d←(((⊢ a1) -˜ ((+` a1) × (¬ a1))) ⊔ y)
+<pre><code><span class="deemphasize">
+y←"hello, world, !" ⋄ a1←y=',' ⋄ F‿G‿H‿I‿J‿K←⟨¬,×,+`,-˜,⊣,⊔⟩
+</span>
+a← a1  (⊢     -˜   +`     ×  ¬     )⊸⊔ y      
+b← a1  (J     I    H      G  F     )⊸K y      
+c←   (((J a1) I  ((H  a1) G (F a1))) K y)
+d←   (((⊢ a1) -˜ ((+` a1) × (¬ a1))) ⊔ y)
+<span class="deemphasize">
 "Should all be the same" !∨´a⊸≡¨b‿c‿d
+</span>
 </code></pre>
 <div hidden>
 }

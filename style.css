@@ -50,6 +50,10 @@ pre code {
     padding: 0;
 }
 
+.deemphasize {
+    color: #aaa;
+}
+
 @media (max-width: 480px) {
     body {
         margin: 1rem auto;

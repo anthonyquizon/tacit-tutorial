@@ -1,1 +1,1 @@
-find *.bqn | entr bqn index.bqn
+find *.bqn *.css | entr -sr "bqn tacit.bqn && bqn index.bqn"
