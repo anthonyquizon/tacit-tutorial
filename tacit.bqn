@@ -49,7 +49,7 @@ w‿x←"𝕨𝕩" ⋄ F‿G‿H‿I‿J‿K‿L← {𝕊f:{ 𝕊𝕩: ∾"("‿
 #d←   (((⊢ a1) -˜ ((+` a1) × (¬ a1))) ⊔ y)
 #<span class="deemphasize">
 𝕩
-#"Should all be the same" !∨´a⊸≡¨b‿c‿d
+#"Should all be the same" !∧´a⊸≡¨b‿c‿d
 #</span>
 #</code></pre>
 #<div hidden>
@@ -80,7 +80,7 @@ d← ((⊢ w) -˜ ((+` w) × (¬ w))) ⊔ x
 ##    ⊢────┼──────────┘         │
 ##         └───────────────────⊸⊔
 ##
-"Should all be the same" !∨´a⊸≡¨b‿c‿d
+"Should all be the same" !∧´a⊸≡¨b‿c‿d
 #</span>
 #</code></pre>
 #<div hidden>
