@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: 'BQN';
+    font-family: 'BQN', 'Iosevka', 'Fira Code', 'DejaVu Sans Mono', monospace;
     font-size: clamp(1rem, 1.5vw + 0.5rem, 1.5rem);
     max-width: clamp(720px, 80vw, 1000px);
     margin: 2rem auto;
@@ -13,6 +13,22 @@ body {
     line-height: 1.6;
     color: #222;
     background: #fff;
+}
+
+section {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #eee;
+}
+
+section:last-of-type {
+  border-bottom: none;
+}
+a {
+  color: #0070f3;
+}
+a:visited {
+  color: #0070f3;
 }
 
 h1{
@@ -25,8 +41,9 @@ h2{
 }
 
 pre {
+    font-family: 'BQN', 'Iosevka', 'Fira Code', 'DejaVu Sans Mono', monospace;
     background: #f5f5f5;
-    padding: 0 1rem 1rem;
+    padding: 1rem 1rem 1rem 2rem;
     border-radius: 6px;
     overflow-x: auto;
     font-size: 0.9em;
@@ -36,6 +53,7 @@ pre {
 }
 
 code {
+    font-family: 'BQN', 'Iosevka', 'Fira Code', 'DejaVu Sans Mono', monospace;
     background: #f0f0f0;
     padding: 0.1em 0.3em;
     border-radius: 3px;
