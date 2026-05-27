@@ -1,6 +1,14 @@
-#<h1> Tacit tutorial</h1>
-#<h2> Trains printed in explicit form</h2>
-#<pre><code>
+
+<!DOCTYPE html>
+<html lang='en'>
+<link rel='stylesheet' href='./style.css'>
+<head>
+  <meta charset='UTF-8'>
+  <title></title>
+</head>
+<h1> Tacit tutorial</h1>
+<h2> Trains printed in explicit form</h2>
+<pre><code>
 Print←{𝕊f: {
    𝕊𝕩: ∾"("‿f‿" "‿𝕩‿")"
 ; 𝕨𝕊𝕩: ∾"("‿𝕨‿" "‿f‿" "‿𝕩‿")"
@@ -20,13 +28,13 @@ a←b←c←d←e←@
 •Out "𝕨" G⟜F "𝕩" # (G 𝕨 (F 𝕩))
 •Out "𝕨" G○F "𝕩" # ((F 𝕨) G (F 𝕩)))
 •Out "𝕨" (I H G)⊸F "𝕩" # (((I 𝕨) H (G 𝕨)) F 𝕩)
-#</code></pre>
+</code></pre>
 
-#<h2> Examples from BQNCrate </h2>
-#<small> x,y,z:any m,n:num i,j:int a,b:bool c,d:char f,g,h:fn 0:unit 1:list 2:tab</small>
+<h2> Examples from BQNCrate </h2>
+<small> x,y,z:any m,n:num i,j:int a,b:bool c,d:char f,g,h:fn 0:unit 1:list 2:tab</small>
 
-#<p> Split y at 1s in a1, not including cells of y at those locations</p>
-#<pre><code>
+<p> Split y at 1s in a1, not including cells of y at those locations</p>
+<pre><code>
 F‿G‿H‿I‿J‿K↩⟨¬,×,+`,-˜,⊣,⊔⟩
 y←"hello, world, !" ⋄ a1←y=','
 
@@ -35,5 +43,8 @@ b↩a1 (J I H G F)⊸K y
 c↩(((J a1) I  ((H  a1) G (F a1))) K y)
 d↩(((⊢ a1) -˜ ((+` a1) × (¬ a1))) ⊔ y)
 !∨´a⊸≡¨b‿c‿d
-#</code></pre>
+</code></pre>
 
+
+<body>
+</html>
