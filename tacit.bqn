@@ -9,10 +9,10 @@
 #</div><pre><code><span class="deemphasize">
 F‿G‿H‿I‿J‿K‿L← {𝕊f:{ 𝕊𝕩: ∾"("‿f‿" "‿𝕩‿")" ; 𝕨𝕊𝕩: ∾"("‿𝕨‿" "‿f‿" "‿𝕩‿")" }}¨'F'+↕7 ⋄ w‿x←"𝕨𝕩"
 #</span>
-((G F) x)         ≡                    G (  F 𝕩)
-((H G F) x)       ≡            (  H 𝕩) G (  F 𝕩)
-((I H G F) x)     ≡         I ((  H 𝕩) G (  F 𝕩))
-((J I H G F) x)   ≡ (  J 𝕩) I ((  H 𝕩) G (  F 𝕩))
+((G F) x)         ≡                    G (  F x)
+((H G F) x)       ≡            (  H x) G (  F x)
+((I H G F) x)     ≡         I ((  H x) G (  F x))
+((J I H G F) x)   ≡ (  J x) I ((  H x) G (  F x))
 
 (w (G F) x)       ≡                    G (w F x)
 (w (H G F) x)     ≡            (w H x) G (w F x)
