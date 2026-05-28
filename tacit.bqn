@@ -12,7 +12,7 @@ F‿G‿H‿I‿J‿K‿L← {𝕊f:{ 𝕊𝕩: ∾"("‿f‿" "‿𝕩‿")" ; 
 ((G F) x)         ≡                    G (  F 𝕩)
 ((H G F) x)       ≡            (  H 𝕩) G (  F 𝕩)
 ((I H G F) x)     ≡         I ((  H 𝕩) G (  F 𝕩))
-((J I H G F) x)   ≡   (J 𝕩) I ((  H 𝕩) G (  F 𝕩))
+((J I H G F) x)   ≡ (  J 𝕩) I ((  H 𝕩) G (  F 𝕩))
 
 (w (G F) x)       ≡                    G (w F x)
 (w (H G F) x)     ≡            (w H x) G (w F x)
