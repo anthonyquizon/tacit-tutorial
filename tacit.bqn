@@ -9,14 +9,14 @@
 #</div><pre><code><span class="deemphasize">
 F‿G‿H‿I‿J‿K‿L← {𝕊f:{ 𝕊𝕩: ∾"("‿f‿" "‿𝕩‿")" ; 𝕨𝕊𝕩: ∾"("‿𝕨‿" "‿f‿" "‿𝕩‿")" }}¨'F'+↕7 ⋄ w‿x←"wx"
 #<span class="deemphasize"></span>
-## Monadic
+## Even
 #</span>
 ((F G) x)         ≡ F    G x
 ((F G H I) x)     ≡ F   (G x) H (I x)
 (w (F G) x)       ≡ F (w G x)
 (w (F G H I) x)   ≡ F (w G x) H (w I x)
 #<span class="deemphasize">
-## Dyadic
+## Odd
 #</span>
 ((F G H) x)       ≡   (F x) G    H x
 ((F G H I J) x)   ≡   (F x) G   (H x) I (J x)
