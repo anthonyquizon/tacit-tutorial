@@ -35,19 +35,19 @@ F‿G‿H‿I‿J‿K‿L← {𝕊f:{ 𝕊𝕩: ∾"("‿f‿" "‿𝕩‿")" ; 
 (w (I H G)⊸F x) ≡ ((I w) H (G w)) F x
 (w (I H⊸G F) x) ≡ (H (w I x)) G (w F x)
 #<span class="deemphasize">
-##  F∘G x   w F∘G x    F○G x   w F○G x
+##  F∘G 𝕩   𝕨 F∘G 𝕩    F○G 𝕩   𝕨 F○G 𝕩
 ##   F         F        F         F   
 ##   |         |        |        / \  
 ##   G         G        G       G   G 
 ##   |        / \       |       |   | 
-##   x       w   x      x       w   x 
+##   𝕩       𝕨   𝕩      𝕩       𝕨   𝕩 
 
-##   F⊸G x   w F⊸G x    F⟜G x   w F⟜G x          
+##   F⊸G 𝕩   𝕨 F⊸G 𝕩    F⟜G 𝕩   𝕨 F⟜G 𝕩          
 ##    G         G        F         F           
 ##   / \       / \      / \       / \            
 ##  F   |     F   |    |   G     |   G          
 ##   \ /      |   |     \ /      |   |          
-##    x       w   x      x       w   x         
+##    𝕩       𝕨   𝕩      𝕩       𝕨   𝕩         
 #</span></code></pre>
 #<div hidden>
 }
