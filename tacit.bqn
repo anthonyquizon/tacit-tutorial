@@ -13,8 +13,8 @@ F‿G‿H‿I‿J‿K‿L← {𝕊f:{ 𝕊𝕩: ∾"("‿f‿" "‿𝕩‿")" ; 
 #</span>
 ((F G) x)         ≡  F   (G x)
 ((F G H) x)       ≡ (F x) G   (H x)
-((F G H I) x)     ≡  F   (G x) H (I x)
-((F G H I J) x)   ≡ (F x) G   (H x) I (J x)
+((F G H I) x)     ≡  F   (G x) H   (I x)
+((F G H I J) x)   ≡ (F x) G   (H x) I   (J x)
 #<span class="deemphasize">
 ## Dyadic
 #</span>
