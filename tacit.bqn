@@ -7,7 +7,7 @@
 #<div hidden>
 {
 #</div><pre><code><span class="deemphasize">
-w‿x←"𝕨𝕩" ⋄ F‿G‿H‿I‿J‿K‿L← {𝕊f:{ 𝕊𝕩: ∾"("‿f‿" "‿𝕩‿")" ; 𝕨𝕊𝕩: ∾"("‿𝕨‿" "‿f‿" "‿𝕩‿")" }}¨'F'+↕7
+F‿G‿H‿I‿J‿K‿L← {𝕊f:{ 𝕊𝕩: ∾"("‿f‿" "‿x‿")" ; 𝕨𝕊𝕩: ∾"("‿w‿" "‿f‿" "‿x‿")" }}¨'F'+↕7 ⋄ w‿x←"𝕨𝕩"
 #</span>
 (w (G F) x)       ≡                    G (w F x)
 (w (H G F) x)     ≡            (w H x) G (w F x)
@@ -21,12 +21,13 @@ w‿x←"𝕨𝕩" ⋄ F‿G‿H‿I‿J‿K‿L← {𝕊f:{ 𝕊𝕩: ∾"("‿
 {
 #</div>
 #<h3> Combinators</h3><pre><code><span class="deemphasize">
-w‿x←"𝕨𝕩" ⋄ F‿G‿H‿I‿J‿K‿L← {𝕊f:{ 𝕊𝕩: ∾"("‿f‿" "‿𝕩‿")" ; 𝕨𝕊𝕩: ∾"("‿𝕨‿" "‿f‿" "‿𝕩‿")" }}¨'F'+↕7
+F‿G‿H‿I‿J‿K‿L← {𝕊f:{ 𝕊𝕩: ∾"("‿f‿" "‿𝕩‿")" ; 𝕨𝕊𝕩: ∾"("‿𝕨‿" "‿f‿" "‿𝕩‿")" }}¨'F'+↕7 ⋄ w‿x←"𝕨𝕩"
 #</span>
 (w G⊸F x)       ≡ (G w) F x
 (w G⟜F x)       ≡ w G (F x)
 (w G○F x)       ≡ (F w) G (F x)
 (w (I H G)⊸F x) ≡ ((I w) H (G w)) F x
+(w (I H⊸G F) x) ≡ (H (w I x)) G (w F x)
 #</code></pre>
 #<div hidden>
 }
@@ -42,15 +43,20 @@ w‿x←"𝕨𝕩" ⋄ F‿G‿H‿I‿J‿K‿L← {𝕊f:{ 𝕊𝕩: ∾"("‿
 {
 #</div>
 #<pre><code><span class="deemphasize">
-#x←"hello, world, !" ⋄ j1←y=',' ⋄ F‿G‿H‿I‿J‿K←⟨¬,×,+`,-˜,⊣,⊔⟩
+w←↕4⋄x←1‿3‿2‿0 ⋄ I‿H‿G‿F←⟨⊏˜,⍋,⊏,⊢⟩
 #</span>
-#a←x(⊏˜⍋⊸⊏⊢)j1
-#b←x() a1  (J     I    H      G  F     )⊸K y      
-#c←   (((J a1) I  ((H  a1) G (F a1))) K y)
-#d←   (((⊢ a1) -˜ ((+` a1) × (¬ a1))) ⊔ y)
+a←w (     ⊏˜    ⍋⊸⊏   ⊢  ) x
+b←w (     I     H⊸G   F  ) x
+c←  (H (w I  x)) G (w F x)
+d←  (⍋ (w ⊏˜ x)) ⊏ (w ⊢ x)
 #<span class="deemphasize">
-𝕩
-#"Should all be the same" !∧´a⊸≡¨b‿c‿d
+##   (     ⊏˜    ⍋⊸⊏   ⊢  )
+##         │     │ │   │
+##         │     ⍋⊸⊏   │
+##         ⊏˜     │    │
+##         └──────┼────⊢
+##       ╶────────┘
+"Should all be the same" !∧´a⊸≡¨b‿c‿d
 #</span>
 #</code></pre>
 #<div hidden>
@@ -60,17 +66,17 @@ w‿x←"𝕨𝕩" ⋄ F‿G‿H‿I‿J‿K‿L← {𝕊f:{ 𝕊𝕩: ∾"("‿
 
 #<section>
 #<p>  Split y at 1s in a1, not including cells of y at those locations<br/>
-#<code class="inline-code">a1 (⊢ -˜+`× ¬)⊸⊔ y</code>
+#<code class="inline-code">a1(⊢-˜+`×¬)⊸⊔y</code>
 #</p>
 #<div hidden>
 {
 #</div>
 #<pre><code><span class="deemphasize">
-x←"hello, world, !" ⋄ w←x=',' ⋄ F‿G‿H‿I‿J‿K←⟨¬,×,+`,-˜,⊣,⊔⟩
+w←','=x←"hello, world, !" ⋄ K‿J‿I‿H‿G‿F←⟨⊢,-˜,+`,×,¬,⊔⟩
 #</span>
 a←w (⊢    -˜   +`    ×  ¬    )⊸⊔ x  
-b←w (J    I    H     G  F    )⊸K x      
-c← ((J w) I  ((H  w) G (F w))) K x
+b←w (K    J    I     H  G    )⊸F x      
+c← ((K w) J  ((I  w) H (G w))) F x
 d← ((⊢ w) -˜ ((+` w) × (¬ w))) ⊔ x
 #<span class="deemphasize">
 ##   (⊢    -˜   +`    ×  ¬    )⊸⊔
@@ -88,3 +94,4 @@ d← ((⊢ w) -˜ ((+` w) × (¬ w))) ⊔ x
 }
 #</div>
 #</section>
+#<div>Source: <a href='https://github.com/anthonyquizon/tacit-tutorial'>github.com/anthonyquizon/tacit-tutorial</a></div>

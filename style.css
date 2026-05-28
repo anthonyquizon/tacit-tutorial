@@ -61,6 +61,7 @@ code {
 
 code.inline-code {
     background: transparent;
+    padding:0;
 }
 
 pre code {

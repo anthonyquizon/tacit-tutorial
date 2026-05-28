@@ -12,7 +12,6 @@ b←∾∾⟜(@+10)¨1⊸↓¨⌾(m⊸/)c
   <title></title>
 </head>
 "∾b∾"
-<div>Source: <a href='https://github.com/anthonyquizon/tacit-tutorial'>github.com/anthonyquizon/tacit-tutorial</a></div>
 <body>
 </html>
 "
