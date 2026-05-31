@@ -8,7 +8,7 @@
 {
 #</div><pre><code><span class="deemphasize">
 F‿G‿H‿I‿J‿K‿L← {𝕊f:{ 𝕊𝕩: ∾"("‿f‿" "‿𝕩‿")" ; 𝕨𝕊𝕩: ∾"("‿𝕨‿" "‿f‿" "‿𝕩‿")" }}¨'F'+↕7 ⋄ w‿x←"wx"
-#<span class="deemphasize"></span>
+#</span><span class="deemphasize">
 ## Monadic
 #</span>
 ((F G) x)         ≡  F   (G x)
@@ -31,14 +31,22 @@ F‿G‿H‿I‿J‿K‿L← {𝕊f:{ 𝕊𝕩: ∾"("‿f‿" "‿𝕩‿")" ; 
 #</div>
 #<h3> Combinators</h3><pre><code><span class="deemphasize">
 F‿G‿H‿I‿J‿K‿L← {𝕊f:{ 𝕊𝕩: ∾"("‿f‿" "‿𝕩‿")" ; 𝕨𝕊𝕩: ∾"("‿𝕨‿" "‿f‿" "‿𝕩‿")" }}¨'F'+↕7 ⋄ w‿x←"wx"
+#</span></span><span class="deemphasize">
+## Monadic
 #</span>
-(w F∘G x)       ≡ F (w G x)
-(w F⊸G x)       ≡ (F w) G x
-(w F⟜G x)       ≡ w F (G x)
-(w F○G x)       ≡ (G w) F (G x)
-(w (F G H)⊸I x) ≡ ((F w) G (H w)) I x
-(w (F G⊸H I) x) ≡ (G (w F x)) H (w I x)
-(w (F⟜G H I) x) ≡ (w F (G x)) H (w I x)
+(F∘G x) ≡ F (G x)
+(F○G x) ≡ F (G x)
+(F⊸G x) ≡ (F x) G x
+(F⟜G x) ≡ x F (G x)
+(F˜  x) ≡ x F x
+#<span class="deemphasize">
+## Dyadic
+#</span>
+(w F∘G x) ≡ F (w G x)
+(w F○G x) ≡ (G w) F (G x)
+(w F⊸G x) ≡ (F w) G x
+(w F⟜G x) ≡ w F (G x)
+(w F˜  x) ≡ x F w
 #<span class="deemphasize">
 ##  F∘G 𝕩   𝕨 F∘G 𝕩    F○G 𝕩   𝕨 F○G 𝕩
 ##   F         F        F         F   
@@ -101,16 +109,16 @@ m←1‿2‿3‿4⋄n←2‿1‿3‿5 ⋄ F‿G‿H‿I←⟨≤,|,×,⊢⟩
 #</span>
 a←m (  ≤⟜ |     ×    ⊢  ) n
 b←m (  F⟜ G     H    I  ) n
-c←  (m F (G n)) H (m I n)
-d←  (m ≤ (| n)) × (m ⊢ n)
+c←  (m F⟜ G n)  H (m I n)  
+d←  (m F (G n)) H (m I n)  
+e←  (m ≤ (| n)) × (m ⊢ n)
 #<span class="deemphasize">
 ##   (  ≤⟜ |     ×    ⊢  )
 ##      │  │          │
 ##      ≤⟜ |          │
 ##       └───────×────⊢
 ##  ╶────────────┘
-•Show a‿b‿c‿d
-"Should all be the same" !∧´a⊸≡¨b‿c‿d
+"Should all be the same" !∧´a⊸≡¨b‿c‿d‿e
 #</span>
 #</code></pre>
 #<div hidden>
@@ -128,18 +136,19 @@ d←  (m ≤ (| n)) × (m ⊢ n)
 #<pre><code><span class="deemphasize">
 x←↕4⋄j1←1‿3‿2‿0 ⋄ F‿G‿H‿I←⟨⊏,⍋,⊏,⊢⟩
 #</span>
-a←x (     ⊏˜    ⍋⊸⊏   ⊢  ) j1
-b←x (     F˜    G⊸H   I  ) j1
-c←  (G (x F˜ j1)) H (x I j1)
-d←  (⍋ (x ⊏˜ j1)) ⊏ (x ⊢ j1)
+a←x (      ⊏˜     ⍋⊸⊏    ⊢   ) j1
+b←x (      F˜     G⊸H    I   ) j1
+c←  (   x  F˜ j1) G⊸H (x I j1)
+d←  (G (j1 F  x))  H  (x I j1)
+e←  (⍋ (j1 ⊏  x))  ⊏  (x ⊢ j1)
 #<span class="deemphasize">
-##   (     ⊏˜    ⍋⊸⊏   ⊢  )
-##         │     │ │   │
-##         │     ⍋⊸⊏   │
-##         ⊏˜     │    │
-##         └──────┼────⊢
-## ───────────────┘
-"Should all be the same" !∧´a⊸≡¨b‿c‿d
+##   (     ⊏˜      ⍋⊸⊏    ⊢   )
+##         │       │ │    │
+##         │       ⍋⊸⊏    │
+##         ⊏˜       │     │
+##         └────────┼─────⊢
+## ─────────────────┘
+"Should all be the same" !∧´a⊸≡¨b‿c‿d‿e
 #</span>
 #</code></pre>
 #<div hidden>
@@ -157,18 +166,19 @@ d←  (⍋ (x ⊏˜ j1)) ⊏ (x ⊢ j1)
 #<pre><code><span class="deemphasize">
 a1←','=y←"hello, world, !" ⋄ F‿G‿H‿I‿J‿K←⟨⊢,-,+,×,¬,⊔⟩
 #</span>
-a←a1 (⊢     -˜  +`     ×  ¬    )⊸⊔ y
-b←a1 (F     G˜  H`     I  J    )⊸K y      
-c←  ((F a1) G˜ (H` a1) I (J a1)) K y
-d←  ((⊢ a1) -˜ (+` a1) × (¬ a1)) ⊔ y
+a←a1 ( ⊢      -˜   +`     ×  ¬     )⊸⊔ y
+b←a1 ( F      G˜   H`     I  J     )⊸K y      
+c←  (( F  a1) G˜ ((H` a1) I (J a1)))⊸K y
+d←  (((H` a1) I   (J a1)) G (F a1) ) K y
+e←  (((+` a1) ×   (¬ a1)) - (⊢ a1) ) K y
 #<span class="deemphasize">
-##   (⊢    -˜   +`    ×  ¬    )⊸⊔
-##    │    │    │        │      │
-##    │    │    +`       │      │
-##    │    │     └────×──¬      │
-##    │    -˜         │         │
-##    ⊢────┼──────────┘         │
-##         └───────────────────⊸⊔
+##    ( ⊢      -˜   +`     ×  ¬     )⊸⊔
+##      │      │    │         │       │
+##      │      │    +`        │       │
+##      │      │     └─────×──¬       │
+##      │      -˜          │          │
+##      ⊢──────┼───────────┘          │
+##             └─────────────────────⊸⊔
 ##
 "Should all be the same" !∧´a⊸≡¨b‿c‿d
 #</span>
